@@ -13,4 +13,8 @@ export default {
   <Footer />
 </template>
 
-<style></style>
+<style>
+* {
+  font-family: 'Noto Sans TC', sans-serif;
+}
+</style>

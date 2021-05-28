@@ -1,12 +1,15 @@
-import { createStore } from 'vuex'
+import { createStore } from 'vuex';
+
+import data from '@/lib/data.js';
 
 export default createStore({
   state: {
+    data,
   },
-  mutations: {
+  mutations: {},
+  actions: {},
+  getters: {
+    data: (state) => state.data,
   },
-  actions: {
-  },
-  modules: {
-  }
-})
+  modules: {},
+});
