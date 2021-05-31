@@ -1,27 +1,54 @@
 <script>
-import { computed } from 'vue';
+import { computed, onBeforeMount, ref } from 'vue';
 import { useStore } from 'vuex';
+import { useRouter } from 'vue-router';
 
 export default {
   setup() {
+    let loadedNum = ref(0);
+
     const store = useStore();
+
+    const router = useRouter();
+
     const data = computed(() => store.getters.data);
 
-    return { data };
+    const cardLength = computed(() => {
+      let num = 0;
+      data.value.forEach((item) => {
+        num = num + item.artists.length;
+      });
+      return num;
+    });
+
+    const handleLoadNum = () => {
+      loadedNum.value++;
+      if (loadedNum.value === cardLength.value) store.commit('handleImageLoading');
+    };
+
+    onBeforeMount(() => store.commit('handleImageLoading'));
+
+    const toArtistPage = (name) => router.push({ path: `/artist/${name}` });
+
+    return { data, handleLoadNum, toArtistPage };
   },
 };
 </script>
 
 <template>
-  <div class="home text-light">
+  <div class="j-home">
     <div class="row">
-      <div class="col-xxl-6" v-for="item in data" :key="item.theme">
-        <div class="fs-4 mb-3">{{ item.theme }}</div>
+      <div class="col-xxl-6" v-for="theme in data" :key="theme.theme">
+        <div class="j-theme">{{ theme.theme }}</div>
         <div class="row">
-          <div class="col-lg-3 col-md-4 col-sm-6" v-for="i in item.artists" :key="i.artist">
-            <div class="j-card p-3 mb-4">
-              <img class="w-100 mb-3" :src="i.list[0].photo" />
-              <div class="mb-3">{{ i.artist }}</div>
+          <div
+            class="col-lg-3 col-md-4 col-sm-6"
+            v-for="artist in theme.artists"
+            :key="artist.artist"
+          >
+            <div class="j-card" @click="toArtistPage(artist.artist)">
+              <img :src="artist.list[0].photo" @load="handleLoadNum" />
+              <span>{{ artist.artist }}</span>
             </div>
           </div>
         </div>
@@ -31,14 +58,22 @@ export default {
 </template>
 
 <style lang="scss" scoped>
-.home {
+.j-home {
   width: calc(100% - 240px);
-  height: 3000px;
+  min-height: 100vh;
   background-color: rgb(18, 18, 18);
   margin-left: 240px;
   padding: 32px;
+  color: white;
+
+  .j-theme {
+    font-size: 24px;
+    margin-bottom: 16px;
+  }
 
   .j-card {
+    padding: 16px 16px 32px 16px;
+    margin-bottom: 24px;
     border-radius: 4px;
     background-color: rgb(24, 24, 24);
     transition: 0.25s;
@@ -46,6 +81,11 @@ export default {
     &:hover {
       cursor: pointer;
       background-color: rgb(38, 38, 38);
+    }
+
+    img {
+      width: 100%;
+      margin-bottom: 16px;
     }
   }
 }

@@ -1,45 +1,72 @@
 <script>
+import { useStore } from 'vuex';
+import { useRoute } from 'vue-router';
+import { computed, onBeforeMount, reactive, ref } from 'vue';
+
+import { colorList } from '@/lib/tools.js';
+
 import Table from '@/components/Table.vue';
 
 export default {
   components: { Table },
+  setup() {
+    const store = useStore();
+
+    const route = useRoute();
+
+    const bannerColor = ref('');
+
+    const playList = reactive({ data: {} });
+
+    const data = computed(() => store.getters.data);
+
+    onBeforeMount(() => {
+      data.value.forEach((theme) => {
+        theme.artists.forEach((artist) => {
+          if (artist.artist === route.params.name) playList.data = artist;
+        });
+      });
+
+      const randomNum = parseInt(Math.random() * 19);
+      bannerColor.value = colorList[randomNum];
+    });
+
+    return { bannerColor, playList };
+  },
 };
 </script>
 
 <template>
-  <div class="playlist">
-    <div class="banner">
-      <img
-        src="https://firebasestorage.googleapis.com/v0/b/juntify-fd26d.appspot.com/o/IU%2FCelebrity.jpg?alt=media&token=9973b39e-12f2-467d-8877-f4c5c73e7927"
-      />
-      <span>IU</span>
+  <div class="j-artist">
+    <div class="j-banner" :style="{ backgroundColor: bannerColor }">
+      <img :src="playList.data.list[0].photo" />
+      <span>{{ playList.data.artist }}</span>
     </div>
-    <div class="banner-gradient">
-      <Table />
+    <div class="j-gradient" :style="{ backgroundColor: bannerColor }">
+      <Table :playList="playList" />
     </div>
   </div>
 </template>
 
 <style lang="scss" scoped>
-.playlist {
+.j-artist {
   width: calc(100% - 240px);
-  height: 3000px;
-  background-color: rgb(18, 18, 18);
+  min-height: 100vh;
   margin-left: 240px;
+  background-color: rgb(18, 18, 18);
 
-  .banner {
+  .j-banner {
     @include d-flex;
     height: 340px;
     padding-left: 32px;
     padding-bottom: 24px;
     background: -webkit-gradient(
-        linear,
-        left top,
-        left bottom,
-        from(transparent),
-        to(rgba(0, 0, 0, 0.5))
-      ),
-      #00bcd4;
+      linear,
+      left top,
+      left bottom,
+      from(transparent),
+      to(rgba(0, 0, 0, 0.5))
+    );
 
     img {
       width: 232px;
@@ -57,20 +84,19 @@ export default {
       margin-bottom: 16px;
       align-self: flex-end;
       letter-spacing: -4px;
-      color: rgb(255, 255, 255);
+      color: white;
     }
   }
 
-  .banner-gradient {
+  .j-gradient {
     height: 240px;
     background: -webkit-gradient(
-        linear,
-        left top,
-        left bottom,
-        from(rgba(0, 0, 0, 0.6)),
-        to(rgb(18, 18, 18))
-      ),
-      #00bcd4;
+      linear,
+      left top,
+      left bottom,
+      from(rgba(0, 0, 0, 0.6)),
+      to(rgb(18, 18, 18))
+    );
   }
 }
 </style>
