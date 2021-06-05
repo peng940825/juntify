@@ -1,6 +1,6 @@
 <script>
-import { computed, onBeforeMount, onBeforeUnmount, ref, watch } from 'vue';
 import { useStore } from 'vuex';
+import { ref, watch, computed, onBeforeMount } from 'vue';
 
 import Deezer from '@/components/Deezer.vue';
 
@@ -15,77 +15,59 @@ export default {
   },
 
   setup(props) {
+    const store = useStore();
+
     let loadedNum = ref(0);
 
-    const store = useStore();
+    const musicLoading = computed(() => store.getters.musicLoading);
+
+    const currentMusic = computed(() => store.getters.currentMusic);
+
+    const currentMusicTitle = computed(() => store.getters.currentMusic.title);
+
+    const play = (item) => {
+      if (Object.keys(currentMusic.value).length === 0) {
+        store.commit('setCurrentMusic', item);
+        store.dispatch('play', item.music);
+      } else if (item.title === currentMusicTitle.value) {
+        store.dispatch('continue');
+      } else {
+        store.commit('pause');
+        store.commit('clearInterval');
+        store.commit('handleIsPlaying', false);
+        store.commit('setCurrentMusic', item);
+        store.dispatch('play', item.music);
+      }
+      store.commit('handleIsPlaying', true);
+    };
+
+    const pause = () => {
+      store.commit('pause');
+      store.commit('clearInterval');
+      store.commit('handleIsPlaying', false);
+    };
+
+    const handleLoadedImgNum = () => {
+      loadedNum.value++;
+      if (loadedNum.value === props.playList.data.list.length)
+        store.commit('handleImageLoading', false);
+    };
 
     const overRow = (item) => (item.hover = true);
 
     const leaveRow = (item) => (item.hover = false);
 
-    const musicLoading = computed(() => store.getters.musicLoading);
-
-    const currentMusicTitle = computed(() => store.getters.currentMusic.title);
-
-    const play = (item) => {
-      if (Object.keys(store.state.currentMusic).length === 0) {
-        store.commit('setCurrentMusic', item);
-        store.dispatch('play', item.music);
-      } else if (item.title === store.state.currentMusic.title) {
-        store.commit('continue');
-      } else {
-        store.commit('pause');
-        store.commit('setCurrentMusic', item);
-        closeIsPlaying();
-        store.dispatch('play', item.music);
-      }
-      item.isPlaying = true;
-    };
-
-    const pause = (item) => {
-      store.commit('pause');
-      item.isPlaying = false;
-    };
-
     watch(
       () => store.state.audio,
       () => {
-        store.state.audio.addEventListener(
-          'ended',
-          () => (store.state.currentMusic.isPlaying = false)
-        );
+        store.state.audio.addEventListener('ended', () => {
+          store.commit('clearInterval');
+          store.commit('handleIsPlaying', false);
+        });
       }
     );
 
-    const closeIsPlaying = () => {
-      const target = props.playList.data.list.filter(
-        (item) => item.title !== store.state.currentMusic.title
-      );
-      target.forEach((item) => (item.isPlaying = false));
-    };
-
-    const handleIsPlaying = (status) => {
-      props.playList.data.list.forEach((item) => {
-        if (item.title === currentMusicTitle.value) item.isPlaying = status;
-      });
-    };
-
-    const handleLoadNum = () => {
-      loadedNum.value++;
-      if (loadedNum.value === props.playList.data.list.length) store.commit('handleImageLoading');
-    };
-
-    onBeforeMount(() => {
-      store.commit('handleImageLoading');
-      if (store.state.audio) {
-        if (store.state.audio.ended) handleIsPlaying(false);
-        else handleIsPlaying(true);
-      }
-    });
-
-    onBeforeUnmount(() => {
-      props.playList.data.list.forEach((item) => (item.isPlaying = false));
-    });
+    onBeforeMount(() => store.commit('handleImageLoading', true));
 
     return {
       props,
@@ -95,7 +77,7 @@ export default {
       pause,
       currentMusicTitle,
       musicLoading,
-      handleLoadNum,
+      handleLoadedImgNum,
     };
   },
 };
@@ -124,14 +106,14 @@ export default {
       </div>
       <div class="j-order" v-show="item.hover">
         <i
-          class="bi bi-caret-right-fill"
+          class="bi bi-play-fill"
           v-show="!item.isPlaying && !musicLoading"
           @click="play(item)"
         ></i>
-        <i class="bi bi-pause-fill" v-show="item.isPlaying" @click="pause(item)"></i>
+        <i class="bi bi-pause-fill" v-show="item.isPlaying" @click="pause"></i>
       </div>
       <div class="j-title">
-        <img :src="item.photo" @load="handleLoadNum" />
+        <img :src="item.photo" @load="handleLoadedImgNum" />
         <div class="j-content">
           <span :class="{ 'j-playing': currentMusicTitle === item.title }">{{ item.title }}</span>
           <!-- <span>{{ playList.data.artist }}</span> -->

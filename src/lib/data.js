@@ -6,6 +6,7 @@ export default [
         artist: '任然',
         list: [
           {
+            artist: '任然',
             title: '無人之島',
             album: '沒有發生的愛情',
             length: '0:14',
@@ -15,6 +16,7 @@ export default [
               'https://firebasestorage.googleapis.com/v0/b/juntify-fd26d.appspot.com/o/%E4%BB%BB%E7%84%B6%2F%E7%84%A1%E4%BA%BA%E4%B9%8B%E5%B3%B6.png?alt=media&token=f00015eb-c41c-4755-8eaa-16fae4a8137d',
           },
           {
+            artist: '任然',
             title: '飛鳥和蟬',
             album: '飛鳥和蟬',
             length: '0:18',
@@ -24,27 +26,30 @@ export default [
               'https://firebasestorage.googleapis.com/v0/b/juntify-fd26d.appspot.com/o/%E4%BB%BB%E7%84%B6%2F%E9%A3%9B%E9%B3%A5%E5%92%8C%E8%9F%AC.png?alt=media&token=18db5f9c-f70b-404f-9cfc-df9710488db7',
           },
           {
+            artist: '任然',
             title: '雀躍',
             album: '雀躍',
-            length: '0:16',
+            length: '0:15',
             music:
               'https://firebasestorage.googleapis.com/v0/b/juntify-fd26d.appspot.com/o/%E4%BB%BB%E7%84%B6%2F%E9%9B%80%E8%BA%8D.mp3?alt=media&token=081b6abb-d8b7-4354-b20a-5913d1c92d59',
             photo:
               'https://firebasestorage.googleapis.com/v0/b/juntify-fd26d.appspot.com/o/%E4%BB%BB%E7%84%B6%2F%E9%9B%80%E8%BA%8D.png?alt=media&token=6216d9c6-c686-41c4-909a-3f122cca8d70',
           },
           {
+            artist: '任然',
             title: '涼城',
             album: '後繼者',
-            length: '0:15',
+            length: '0:14',
             music:
               'https://firebasestorage.googleapis.com/v0/b/juntify-fd26d.appspot.com/o/%E4%BB%BB%E7%84%B6%2F%E6%B6%BC%E5%9F%8E.mp3?alt=media&token=06d881e1-a8fc-4407-89f3-aa4412cfff45',
             photo:
               'https://firebasestorage.googleapis.com/v0/b/juntify-fd26d.appspot.com/o/%E4%BB%BB%E7%84%B6%2F%E6%B6%BC%E5%9F%8E.png?alt=media&token=9cf3d5ce-aaf1-4efd-b456-0d0fbbb810fe',
           },
           {
+            artist: '任然',
             title: '朱砂',
             album: '朱砂',
-            length: '0:19',
+            length: '0:18',
             music:
               'https://firebasestorage.googleapis.com/v0/b/juntify-fd26d.appspot.com/o/%E4%BB%BB%E7%84%B6%2F%E6%9C%B1%E7%A0%82.mp3?alt=media&token=22a2df5a-a946-49f6-9400-3ab38326cf18',
             photo:
@@ -56,24 +61,27 @@ export default [
         artist: '鄧紫棋',
         list: [
           {
+            artist: '鄧紫棋',
             title: '句號',
             album: '句號',
-            length: '0:17',
+            length: '0:16',
             music:
               'https://firebasestorage.googleapis.com/v0/b/juntify-fd26d.appspot.com/o/%E9%84%A7%E7%B4%AB%E6%A3%8B%2F%E5%8F%A5%E8%99%9F.mp3?alt=media&token=13eb6d95-7878-47bc-9c49-4101220f503a',
             photo:
               'https://firebasestorage.googleapis.com/v0/b/juntify-fd26d.appspot.com/o/%E9%84%A7%E7%B4%AB%E6%A3%8B%2F%E5%8F%A5%E8%99%9F.jpg?alt=media&token=d7425726-3e90-4772-9de2-77a52d04ff41',
           },
           {
+            artist: '鄧紫棋',
             title: '倒數',
             album: '倒數',
-            length: '0:18',
+            length: '0:17',
             music:
               'https://firebasestorage.googleapis.com/v0/b/juntify-fd26d.appspot.com/o/%E9%84%A7%E7%B4%AB%E6%A3%8B%2F%E5%80%92%E6%95%B8.mp3?alt=media&token=7c89a6b5-4e17-4c03-8b74-e63898df0925',
             photo:
               'https://firebasestorage.googleapis.com/v0/b/juntify-fd26d.appspot.com/o/%E9%84%A7%E7%B4%AB%E6%A3%8B%2F%E5%80%92%E6%95%B8.jpg?alt=media&token=8fffe2d7-2148-4ccf-9bb7-bf18b658cda2',
           },
           {
+            artist: '鄧紫棋',
             title: '再見',
             album: '再見',
             length: '0:18',
@@ -83,6 +91,7 @@ export default [
               'https://firebasestorage.googleapis.com/v0/b/juntify-fd26d.appspot.com/o/%E9%84%A7%E7%B4%AB%E6%A3%8B%2F%E5%86%8D%E8%A6%8B.jpg?alt=media&token=fe540eef-43f6-44ca-9c81-0f6c67fc4c70',
           },
           {
+            artist: '鄧紫棋',
             title: '好想好想你',
             album: '摩天動物園',
             length: '0:20',
@@ -92,9 +101,10 @@ export default [
               'https://firebasestorage.googleapis.com/v0/b/juntify-fd26d.appspot.com/o/%E9%84%A7%E7%B4%AB%E6%A3%8B%2F%E5%A5%BD%E6%83%B3%E5%A5%BD%E6%83%B3%E4%BD%A0.jpg?alt=media&token=808869de-7069-40d9-97ec-5ae987bbb63e',
           },
           {
+            artist: '鄧紫棋',
             title: '孤獨',
             album: '孤獨',
-            length: '0:17',
+            length: '0:16',
             music:
               'https://firebasestorage.googleapis.com/v0/b/juntify-fd26d.appspot.com/o/%E9%84%A7%E7%B4%AB%E6%A3%8B%2F%E5%AD%A4%E7%8D%A8.mp3?alt=media&token=6e16373a-2ba3-4096-99c5-29120cf60a33',
             photo:
@@ -106,24 +116,27 @@ export default [
         artist: 'E.SO',
         list: [
           {
+            artist: 'E.SO',
             title: '伯父',
             album: 'Outta Body 靈魂出竅',
-            length: '0:16',
+            length: '0:15',
             music:
               'https://firebasestorage.googleapis.com/v0/b/juntify-fd26d.appspot.com/o/%E7%98%A6%E5%AD%90%2F%E4%BC%AF%E7%88%B6.mp3?alt=media&token=5fa50666-b46d-4323-aacc-45b27850a839',
             photo:
               'https://firebasestorage.googleapis.com/v0/b/juntify-fd26d.appspot.com/o/%E7%98%A6%E5%AD%90%2F%E4%BC%AF%E7%88%B6.jpg?alt=media&token=5f8b2df5-3095-4be4-bcde-ca4bc433b14d',
           },
           {
+            artist: 'E.SO',
             title: 'CHANGE',
             album: 'Outta Body 靈魂出竅',
-            length: '0:21',
+            length: '0:20',
             music:
               'https://firebasestorage.googleapis.com/v0/b/juntify-fd26d.appspot.com/o/%E7%98%A6%E5%AD%90%2FCHANGE.mp3?alt=media&token=f72a4ef4-494e-4376-ada7-9d700227f3fa',
             photo:
               'https://firebasestorage.googleapis.com/v0/b/juntify-fd26d.appspot.com/o/%E7%98%A6%E5%AD%90%2FCHANGE.jpg?alt=media&token=cde905d5-c851-47d3-88ba-911e3944c0bc',
           },
           {
+            artist: 'E.SO',
             title: '太陽',
             album: 'Outta Body 靈魂出竅',
             length: '0:18',
@@ -133,6 +146,7 @@ export default [
               'https://firebasestorage.googleapis.com/v0/b/juntify-fd26d.appspot.com/o/%E7%98%A6%E5%AD%90%2F%E5%A4%AA%E9%99%BD.jpg?alt=media&token=10923cfd-0ed6-4b5c-a317-c92cafa9f0df',
           },
           {
+            artist: 'E.SO',
             title: '她沒在看我',
             album: 'Outta Body 靈魂出竅',
             length: '0:20',
@@ -147,6 +161,7 @@ export default [
         artist: '李榮浩',
         list: [
           {
+            artist: '李榮浩',
             title: '就這樣',
             album: '嗯',
             length: '0:23',
@@ -156,27 +171,30 @@ export default [
               'https://firebasestorage.googleapis.com/v0/b/juntify-fd26d.appspot.com/o/%E6%9D%8E%E6%A6%AE%E6%B5%A9%2F%E5%B0%B1%E9%80%99%E6%A8%A3.jpg?alt=media&token=dc8cdc57-677a-452b-aefa-7d914154ef0b',
           },
           {
+            artist: '李榮浩',
             title: '不將就',
             album: '有理想',
-            length: '0:27',
+            length: '0:26',
             music:
               'https://firebasestorage.googleapis.com/v0/b/juntify-fd26d.appspot.com/o/%E6%9D%8E%E6%A6%AE%E6%B5%A9%2F%E4%B8%8D%E5%B0%87%E5%B0%B1.mp3?alt=media&token=84f251e3-e04b-48ec-be24-9efcfe693b66',
             photo:
               'https://firebasestorage.googleapis.com/v0/b/juntify-fd26d.appspot.com/o/%E6%9D%8E%E6%A6%AE%E6%B5%A9%2F%E4%B8%8D%E5%B0%87%E5%B0%B1.jpg?alt=media&token=853a7800-2b2d-403c-8f79-ff4896451984',
           },
           {
+            artist: '李榮浩',
             title: '年少有為',
             album: '耳朵',
-            length: '0:15',
+            length: '0:14',
             music:
               'https://firebasestorage.googleapis.com/v0/b/juntify-fd26d.appspot.com/o/%E6%9D%8E%E6%A6%AE%E6%B5%A9%2F%E5%B9%B4%E5%B0%91%E6%9C%89%E7%82%BA.mp3?alt=media&token=cf13ed7f-91ee-421d-916c-fca4adfbc84d',
             photo:
               'https://firebasestorage.googleapis.com/v0/b/juntify-fd26d.appspot.com/o/%E6%9D%8E%E6%A6%AE%E6%B5%A9%2F%E5%B9%B4%E5%B0%91%E6%9C%89%E7%82%BA.jpg?alt=media&token=ba2b7ba8-8040-47f5-8c49-398f4526664c',
           },
           {
+            artist: '李榮浩',
             title: '模特',
             album: '模特',
-            length: '0:23',
+            length: '0:22',
             music:
               'https://firebasestorage.googleapis.com/v0/b/juntify-fd26d.appspot.com/o/%E6%9D%8E%E6%A6%AE%E6%B5%A9%2F%E6%A8%A1%E7%89%B9.mp3?alt=media&token=8c9a8392-f4f7-4ddb-8aed-711aa4f5df0d',
             photo:
@@ -193,15 +211,17 @@ export default [
         artist: 'まるりとりゅうが',
         list: [
           {
+            artist: 'まるりとりゅうが',
             title: '幸せになって',
             album: '幸せになって',
-            length: '0:23',
+            length: '0:22',
             music:
               'https://firebasestorage.googleapis.com/v0/b/juntify-fd26d.appspot.com/o/%E3%81%BE%E3%82%8B%E3%82%8A%E3%81%A8%E3%82%8A%E3%82%85%E3%81%86%E3%81%8C%2F%E5%B9%B8%E3%81%9B%E3%81%AB%E3%81%AA%E3%81%A3%E3%81%A6.mp3?alt=media&token=9fc9c1c2-248a-47f9-80c1-625093575067',
             photo:
               'https://firebasestorage.googleapis.com/v0/b/juntify-fd26d.appspot.com/o/%E3%81%BE%E3%82%8B%E3%82%8A%E3%81%A8%E3%82%8A%E3%82%85%E3%81%86%E3%81%8C%2F%E5%B9%B8%E3%81%9B%E3%81%AB%E3%81%AA%E3%81%A3%E3%81%A6.jpg?alt=media&token=0f0bf3f9-bf4b-4b41-88e2-72ee306c657f',
           },
           {
+            artist: 'まるりとりゅうが',
             title: '気まぐれな時雨',
             album: '気まぐれな時雨',
             length: '0:23',
@@ -211,6 +231,7 @@ export default [
               'https://firebasestorage.googleapis.com/v0/b/juntify-fd26d.appspot.com/o/%E3%81%BE%E3%82%8B%E3%82%8A%E3%81%A8%E3%82%8A%E3%82%85%E3%81%86%E3%81%8C%2F%E6%B0%97%E3%81%BE%E3%81%90%E3%82%8C%E3%81%AA%E6%99%82%E9%9B%A8.jpg?alt=media&token=d790343b-421d-4cda-8aa4-2ae1370d0366',
           },
           {
+            artist: 'まるりとりゅうが',
             title: '目覚め',
             album: '改めまして。',
             length: '0:18',
@@ -220,6 +241,7 @@ export default [
               'https://firebasestorage.googleapis.com/v0/b/juntify-fd26d.appspot.com/o/%E3%81%BE%E3%82%8B%E3%82%8A%E3%81%A8%E3%82%8A%E3%82%85%E3%81%86%E3%81%8C%2F%E7%9B%AE%E8%A6%9A%E3%82%81.jpg?alt=media&token=5601e657-5a5f-4f01-898e-4a395ffb8102',
           },
           {
+            artist: 'まるりとりゅうが',
             title: 'わけじゃない',
             album: 'わけじゃない',
             length: '0:23',
@@ -229,6 +251,7 @@ export default [
               'https://firebasestorage.googleapis.com/v0/b/juntify-fd26d.appspot.com/o/%E3%81%BE%E3%82%8B%E3%82%8A%E3%81%A8%E3%82%8A%E3%82%85%E3%81%86%E3%81%8C%2F%E3%82%8F%E3%81%91%E3%81%98%E3%82%83%E3%81%AA%E3%81%84.jpg?alt=media&token=c26074ee-83b5-4595-ba2b-84d38a7b275f',
           },
           {
+            artist: 'まるりとりゅうが',
             title: 'はじまりの唄',
             album: 'はじまりの唄',
             length: '0:18',
@@ -243,6 +266,7 @@ export default [
         artist: '當山みれい',
         list: [
           {
+            artist: '當山みれい',
             title: 'もしも',
             album: 'もしも',
             length: '0:21',
@@ -252,6 +276,7 @@ export default [
               'https://firebasestorage.googleapis.com/v0/b/juntify-fd26d.appspot.com/o/%E7%95%B6%E5%B1%B1%E3%81%BF%E3%82%8C%E3%81%84%2F%E3%82%82%E3%81%97%E3%82%82.jpg?alt=media&token=70b12b91-b489-4511-947a-f9a6a6cf0469',
           },
           {
+            artist: '當山みれい',
             title: 'Hikari',
             album: 'Answer',
             length: '0:16',
@@ -261,15 +286,17 @@ export default [
               'https://firebasestorage.googleapis.com/v0/b/juntify-fd26d.appspot.com/o/%E7%95%B6%E5%B1%B1%E3%81%BF%E3%82%8C%E3%81%84%2FHikari.jpg?alt=media&token=fca7043e-04bb-4ac4-b27e-b610748e6ce9',
           },
           {
+            artist: '當山みれい',
             title: 'sayonara',
             album: 'PLAYLIST',
-            length: '0:26',
+            length: '0:25',
             music:
               'https://firebasestorage.googleapis.com/v0/b/juntify-fd26d.appspot.com/o/%E7%95%B6%E5%B1%B1%E3%81%BF%E3%82%8C%E3%81%84%2Fsayonara.mp3?alt=media&token=47209fa2-ce67-45b9-a91c-100c2d78649d',
             photo:
               'https://firebasestorage.googleapis.com/v0/b/juntify-fd26d.appspot.com/o/%E7%95%B6%E5%B1%B1%E3%81%BF%E3%82%8C%E3%81%84%2Fsayonara.jpg?alt=media&token=a3eac112-8007-4ff0-b3d2-e2d28128dcc5',
           },
           {
+            artist: '當山みれい',
             title: 'いやいいや',
             album: 'いやいいや',
             length: '0:20',
@@ -279,9 +306,10 @@ export default [
               'https://firebasestorage.googleapis.com/v0/b/juntify-fd26d.appspot.com/o/%E7%95%B6%E5%B1%B1%E3%81%BF%E3%82%8C%E3%81%84%2F%E3%81%84%E3%82%84%E3%81%84%E3%81%84%E3%82%84.jpg?alt=media&token=6931f5ef-b401-4f07-a76c-69466f61be47',
           },
           {
+            artist: '當山みれい',
             title: '願い～あの頃のキミへ～',
             album: 'Negai - EP',
-            length: '0:23',
+            length: '0:22',
             music:
               'https://firebasestorage.googleapis.com/v0/b/juntify-fd26d.appspot.com/o/%E7%95%B6%E5%B1%B1%E3%81%BF%E3%82%8C%E3%81%84%2F%E9%A1%98%E3%81%84%EF%BD%9E%E3%81%82%E3%81%AE%E9%A0%83%E3%81%AE%E3%82%AD%E3%83%9F%E3%81%B8%EF%BD%9E.mp3?alt=media&token=1c3f6cc7-0f43-4682-b5ab-f7377afb97c7',
             photo:
@@ -293,6 +321,7 @@ export default [
         artist: 'あいみょん',
         list: [
           {
+            artist: 'あいみょん',
             title: '生きていたんだよな',
             album: '青春のエキサイトメント',
             length: '0:22',
@@ -302,15 +331,17 @@ export default [
               'https://firebasestorage.googleapis.com/v0/b/juntify-fd26d.appspot.com/o/%E3%81%82%E3%81%84%E3%81%BF%E3%82%87%E3%82%93%2F%E7%94%9F%E3%81%8D%E3%81%A6%E3%81%84%E3%81%9F%E3%82%93%E3%81%A0%E3%82%88%E3%81%AA.jpg?alt=media&token=60ee4364-1e2c-4a81-a739-db304a2ecd4b',
           },
           {
+            artist: 'あいみょん',
             title: 'ハルノヒ',
             album: 'ハルノヒ',
-            length: '0:20',
+            length: '0:19',
             music:
               'https://firebasestorage.googleapis.com/v0/b/juntify-fd26d.appspot.com/o/%E3%81%82%E3%81%84%E3%81%BF%E3%82%87%E3%82%93%2F%E3%83%8F%E3%83%AB%E3%83%8E%E3%83%92.mp3?alt=media&token=2cc1b487-081d-4dea-9377-0cef92000982',
             photo:
               'https://firebasestorage.googleapis.com/v0/b/juntify-fd26d.appspot.com/o/%E3%81%82%E3%81%84%E3%81%BF%E3%82%87%E3%82%93%2F%E3%83%8F%E3%83%AB%E3%83%8E%E3%83%92.jpg?alt=media&token=af199061-1191-4978-aae9-81fff77b1218',
           },
           {
+            artist: 'あいみょん',
             title: 'マリーゴールド',
             album: 'マリーゴールド',
             length: '0:19',
@@ -320,18 +351,20 @@ export default [
               'https://firebasestorage.googleapis.com/v0/b/juntify-fd26d.appspot.com/o/%E3%81%82%E3%81%84%E3%81%BF%E3%82%87%E3%82%93%2F%E3%83%9E%E3%83%AA%E3%83%BC%E3%82%B4%E3%83%BC%E3%83%AB%E3%83%89.jpg?alt=media&token=cd007e4a-b28d-4e90-97d0-4de727e5c2b6',
           },
           {
+            artist: 'あいみょん',
             title: '今夜このまま',
             album: '今夜このまま',
-            length: '0:19',
+            length: '0:18',
             music:
               'https://firebasestorage.googleapis.com/v0/b/juntify-fd26d.appspot.com/o/%E3%81%82%E3%81%84%E3%81%BF%E3%82%87%E3%82%93%2F%E4%BB%8A%E5%A4%9C%E3%81%93%E3%81%AE%E3%81%BE%E3%81%BE.mp3?alt=media&token=e0cb7735-d384-4fa9-bcb6-615856cf2c18',
             photo:
               'https://firebasestorage.googleapis.com/v0/b/juntify-fd26d.appspot.com/o/%E3%81%82%E3%81%84%E3%81%BF%E3%82%87%E3%82%93%2F%E4%BB%8A%E5%A4%9C%E3%81%93%E3%81%AE%E3%81%BE%E3%81%BE.jpg?alt=media&token=73ad30f1-72da-427e-9127-25683d2a065f',
           },
           {
+            artist: 'あいみょん',
             title: '空の青さを知る人よ',
             album: "Heard that there's good pasta",
-            length: '0:18',
+            length: '0:17',
             music:
               'https://firebasestorage.googleapis.com/v0/b/juntify-fd26d.appspot.com/o/%E3%81%82%E3%81%84%E3%81%BF%E3%82%87%E3%82%93%2F%E7%A9%BA%E3%81%AE%E9%9D%92%E3%81%95%E3%82%92%E7%9F%A5%E3%82%8B%E4%BA%BA%E3%82%88.mp3?alt=media&token=b53b4dc8-a235-47fb-9910-5dd6515d32c4',
             photo:
@@ -343,15 +376,17 @@ export default [
         artist: 'Harutya',
         list: [
           {
+            artist: 'Harutya',
             title: 'Natsurenbo',
             album: 'Natsurenbo',
-            length: '0:22',
+            length: '0:21',
             music:
               'https://firebasestorage.googleapis.com/v0/b/juntify-fd26d.appspot.com/o/Harutya%2FNatsurenbo.mp3?alt=media&token=0bc28320-4494-4e33-900b-4d60759aebe7',
             photo:
               'https://firebasestorage.googleapis.com/v0/b/juntify-fd26d.appspot.com/o/Harutya%2FNatsurenbo.jpg?alt=media&token=f142db7e-8d4a-44c4-9e96-dc69aa20bfd9',
           },
           {
+            artist: 'Harutya',
             title: 'Blue',
             album: 'Blue',
             length: '0:18',
@@ -361,18 +396,20 @@ export default [
               'https://firebasestorage.googleapis.com/v0/b/juntify-fd26d.appspot.com/o/Harutya%2FBlue.jpg?alt=media&token=62fa2cf4-bd97-449f-8175-efd882fcca14',
           },
           {
+            artist: 'Harutya',
             title: 'HANABI',
             album: 'HANABI',
-            length: '0:22',
+            length: '0:21',
             music:
               'https://firebasestorage.googleapis.com/v0/b/juntify-fd26d.appspot.com/o/Harutya%2FHANABI.mp3?alt=media&token=37f1ad35-3916-4425-91af-93216024597a',
             photo:
               'https://firebasestorage.googleapis.com/v0/b/juntify-fd26d.appspot.com/o/Harutya%2FHANABI.jpg?alt=media&token=067b3ea0-f139-413f-9943-2e6ea0800078',
           },
           {
+            artist: 'Harutya',
             title: 'Love letter',
             album: 'Clumsy',
-            length: '0:23',
+            length: '0:22',
             music:
               'https://firebasestorage.googleapis.com/v0/b/juntify-fd26d.appspot.com/o/Harutya%2FLove%20letter.mp3?alt=media&token=119623ab-7f03-4488-b281-40181619f13b',
             photo:
@@ -389,6 +426,7 @@ export default [
         artist: 'Against The Current',
         list: [
           {
+            artist: 'Against The Current',
             title: 'Paralyzed',
             album: 'Gravity',
             length: '0:24',
@@ -398,15 +436,17 @@ export default [
               'https://firebasestorage.googleapis.com/v0/b/juntify-fd26d.appspot.com/o/ATC%2FParalyzed.jpg?alt=media&token=264a18a5-ac4f-40e5-b3bd-95167e7ae52b',
           },
           {
+            artist: 'Against The Current',
             title: 'Gravity',
             album: 'Gravity',
-            length: '0:20',
+            length: '0:19',
             music:
               'https://firebasestorage.googleapis.com/v0/b/juntify-fd26d.appspot.com/o/ATC%2FGravity.mp3?alt=media&token=622bd2fe-2594-4813-9dd8-9f4a82afb492',
             photo:
               'https://firebasestorage.googleapis.com/v0/b/juntify-fd26d.appspot.com/o/ATC%2FGravity.jpg?alt=media&token=e702f19b-670e-4513-b6c3-dabc9dddd624',
           },
           {
+            artist: 'Against The Current',
             title: 'I Like The Way',
             album: 'Past Lives',
             length: '0:17',
@@ -416,6 +456,7 @@ export default [
               'https://firebasestorage.googleapis.com/v0/b/juntify-fd26d.appspot.com/o/ATC%2FI%20Like%20The%20Way.jpg?alt=media&token=f50bd1c1-6b1f-403c-b207-bdc6c2837a11',
           },
           {
+            artist: 'Against The Current',
             title: 'Young & Relentless',
             album: 'Young & Relentless',
             length: '0:14',
@@ -425,9 +466,10 @@ export default [
               'https://firebasestorage.googleapis.com/v0/b/juntify-fd26d.appspot.com/o/ATC%2FYoung%20%26%20Relentless.jpg?alt=media&token=33a7a0dd-4a39-4215-89e0-27dfd67a302c',
           },
           {
+            artist: 'Against The Current',
             title: 'Infinity',
             album: 'Infinity',
-            length: '0:22',
+            length: '0:21',
             music:
               'https://firebasestorage.googleapis.com/v0/b/juntify-fd26d.appspot.com/o/ATC%2FInfinity.mp3?alt=media&token=4879bc5f-7469-4d94-a7f3-97d6854b74ec',
             photo:
@@ -439,24 +481,27 @@ export default [
         artist: 'Justin Bieber',
         list: [
           {
+            artist: 'Justin Bieber',
             title: 'Despactio - Remix',
             album: 'Grillfest',
-            length: '0:22',
+            length: '0:21',
             music:
               'https://firebasestorage.googleapis.com/v0/b/juntify-fd26d.appspot.com/o/Justin%20Bieber%2FDespactio%20-%20Remix.mp3?alt=media&token=506b4890-16af-4d03-9fc9-4a8d797f857f',
             photo:
               'https://firebasestorage.googleapis.com/v0/b/juntify-fd26d.appspot.com/o/Justin%20Bieber%2FDespactio%20-%20Remix.jpg?alt=media&token=da8f5e34-e7ac-4142-871b-f194ca0896d8',
           },
           {
+            artist: 'Justin Bieber',
             title: 'Baby',
             album: "Best of 00's - Anni Duemila",
-            length: '0:16',
+            length: '0:15',
             music:
               'https://firebasestorage.googleapis.com/v0/b/juntify-fd26d.appspot.com/o/Justin%20Bieber%2FBaby.mp3?alt=media&token=79431ea3-d676-432a-9a17-0b2140e981b8',
             photo:
               'https://firebasestorage.googleapis.com/v0/b/juntify-fd26d.appspot.com/o/Justin%20Bieber%2FBaby.jpg?alt=media&token=9dc803e4-72b2-49d6-9f7a-45ab90816b07',
           },
           {
+            artist: 'Justin Bieber',
             title: 'Love Yourself',
             album: 'Purpose',
             length: '0:22',
@@ -466,6 +511,7 @@ export default [
               'https://firebasestorage.googleapis.com/v0/b/juntify-fd26d.appspot.com/o/Justin%20Bieber%2FLove%20Yourself.jpg?alt=media&token=de7850e1-f41b-40e5-b5a2-2fb5a85d8710',
           },
           {
+            artist: 'Justin Bieber',
             title: 'Sorry',
             album: 'Purpose',
             length: '0:19',
@@ -480,24 +526,27 @@ export default [
         artist: 'Eminem',
         list: [
           {
+            artist: 'Eminem',
             title: 'Love The Way You Lie',
             album: 'Recovery',
-            length: '0:22',
+            length: '0:21',
             music:
               'https://firebasestorage.googleapis.com/v0/b/juntify-fd26d.appspot.com/o/Eminem%2FLove%20The%20Way%20You%20Lie.mp3?alt=media&token=7f19944b-e89a-4330-8206-f625f422a952',
             photo:
               'https://firebasestorage.googleapis.com/v0/b/juntify-fd26d.appspot.com/o/Eminem%2FLove%20The%20Way%20You%20Lie.jpg?alt=media&token=a3350395-d3bf-4fac-b2c4-c6fe74b82d87',
           },
           {
+            artist: 'Eminem',
             title: 'Lose Yourself',
             album: 'SHADYXV',
-            length: '0:21',
+            length: '0:20',
             music:
               'https://firebasestorage.googleapis.com/v0/b/juntify-fd26d.appspot.com/o/Eminem%2FLose%20Yourself.mp3?alt=media&token=9e2013ee-8967-4aef-a709-94b636d4b729',
             photo:
               'https://firebasestorage.googleapis.com/v0/b/juntify-fd26d.appspot.com/o/Eminem%2FLose%20Yourself.jpg?alt=media&token=427935f8-f612-4327-905e-25f954c67988',
           },
           {
+            artist: 'Eminem',
             title: 'Not Afraid',
             album: 'Recovery',
             length: '0:23',
@@ -507,6 +556,7 @@ export default [
               'https://firebasestorage.googleapis.com/v0/b/juntify-fd26d.appspot.com/o/Eminem%2FNot%20Afraid.jpg?alt=media&token=c485e751-bdf9-4947-9e31-ac0b4b4c1e86',
           },
           {
+            artist: 'Eminem',
             title: 'The Monster',
             album: 'The Marshall Mathers LP2',
             length: '0:18',
@@ -521,6 +571,7 @@ export default [
         artist: 'Maroon 5',
         list: [
           {
+            artist: 'Maroon 5',
             title: 'Payphone',
             album: 'Overexposed',
             length: '0:17',
@@ -530,24 +581,27 @@ export default [
               'https://firebasestorage.googleapis.com/v0/b/juntify-fd26d.appspot.com/o/Maroon%205%2FPayphone.jpg?alt=media&token=4e063a2e-b25e-47d5-bc7b-2b5b30d4e238',
           },
           {
+            artist: 'Maroon 5',
             title: 'Maps',
             album: 'V(Asia Tour Edition)',
-            length: '0:20',
+            length: '0:19',
             music:
               'https://firebasestorage.googleapis.com/v0/b/juntify-fd26d.appspot.com/o/Maroon%205%2FMaps.mp3?alt=media&token=92c88241-3d50-466d-803c-80977e1a6a25',
             photo:
               'https://firebasestorage.googleapis.com/v0/b/juntify-fd26d.appspot.com/o/Maroon%205%2FMaps.jpg?alt=media&token=24c20975-e4ef-430d-a667-c58cf952d0e3',
           },
           {
+            artist: 'Maroon 5',
             title: 'Moves Like Jagger',
             album: 'Singles',
-            length: '0:16',
+            length: '0:15',
             music:
               'https://firebasestorage.googleapis.com/v0/b/juntify-fd26d.appspot.com/o/Maroon%205%2FMoves%20Like%20Jagger.mp3?alt=media&token=d7075d78-c5cb-4f2b-81d6-745adaf12e7a',
             photo:
               'https://firebasestorage.googleapis.com/v0/b/juntify-fd26d.appspot.com/o/Maroon%205%2FMoves%20Like%20Jagger.jpg?alt=media&token=6556da60-fb30-460e-a7a2-08125be22d72',
           },
           {
+            artist: 'Maroon 5',
             title: 'One More Night',
             album: 'Overexposed',
             length: '0:16',
@@ -567,6 +621,7 @@ export default [
         artist: 'IU',
         list: [
           {
+            artist: 'IU',
             title: 'Celebrity',
             album: "IU 5th Album 'LILAC'",
             length: '0:19',
@@ -576,6 +631,7 @@ export default [
               'https://firebasestorage.googleapis.com/v0/b/juntify-fd26d.appspot.com/o/IU%2FCelebrity.jpg?alt=media&token=9973b39e-12f2-467d-8877-f4c5c73e7927',
           },
           {
+            artist: 'IU',
             title: 'BBIBBI',
             album: 'BBIBBI',
             length: '0:13',
@@ -585,6 +641,7 @@ export default [
               'https://firebasestorage.googleapis.com/v0/b/juntify-fd26d.appspot.com/o/IU%2FBBIBBI.jpg?alt=media&token=3adbeddf-6c84-4b55-bfd6-3716cdbe94b5',
           },
           {
+            artist: 'IU',
             title: 'Blueming',
             album: 'Love Poem',
             length: '0:17',
@@ -594,18 +651,20 @@ export default [
               'https://firebasestorage.googleapis.com/v0/b/juntify-fd26d.appspot.com/o/IU%2FBlueming.jpg?alt=media&token=5993a817-3519-4299-ac92-c82c97516a97',
           },
           {
+            artist: 'IU',
             title: 'Through the Night',
             album: 'Palette',
-            length: '0:22',
+            length: '0:21',
             music:
               'https://firebasestorage.googleapis.com/v0/b/juntify-fd26d.appspot.com/o/IU%2FThrough%20the%20Night.mp3?alt=media&token=7fc965a4-ac28-4873-a33c-5104009722ff',
             photo:
               'https://firebasestorage.googleapis.com/v0/b/juntify-fd26d.appspot.com/o/IU%2FThrough%20the%20Night.jpg?alt=media&token=2d3e08e1-23cf-4760-8da3-f9b96e5dd38b',
           },
           {
+            artist: 'IU',
             title: 'eight ( feat. SUGA of BTS )',
             album: 'eight',
-            length: '0:18',
+            length: '0:17',
             music:
               'https://firebasestorage.googleapis.com/v0/b/juntify-fd26d.appspot.com/o/IU%2Feight.mp3?alt=media&token=6120af9c-ad5a-4224-bbb6-0da1885750f7',
             photo:
@@ -617,24 +676,27 @@ export default [
         artist: 'BTS',
         list: [
           {
+            artist: 'BTS',
             title: 'Film out',
             album: 'Film out',
-            length: '0:24',
+            length: '0:23',
             music:
               'https://firebasestorage.googleapis.com/v0/b/juntify-fd26d.appspot.com/o/BTS%2FFilm%20out.mp3?alt=media&token=118b8927-68e9-46e3-835a-469eb7b3c33b',
             photo:
               'https://firebasestorage.googleapis.com/v0/b/juntify-fd26d.appspot.com/o/BTS%2FFilm%20out.jpg?alt=media&token=1fc0c91d-b302-44b1-a7c3-7e382b1fed78',
           },
           {
+            artist: 'BTS',
             title: 'Boy with Luv',
             album: 'MAP OF THE SOUL : PERSONA',
-            length: '0:21',
+            length: '0:20',
             music:
               'https://firebasestorage.googleapis.com/v0/b/juntify-fd26d.appspot.com/o/BTS%2FBoy%20with%20Luv.mp3?alt=media&token=1921b1f2-ed36-48bb-816c-58d5aaab4a94',
             photo:
               'https://firebasestorage.googleapis.com/v0/b/juntify-fd26d.appspot.com/o/BTS%2FBoy%20with%20Luv.jpg?alt=media&token=5668d801-eab0-414e-8148-20791aa3f3ab',
           },
           {
+            artist: 'BTS',
             title: 'I Need U',
             album: '화양연화 pt.1',
             length: '0:21',
@@ -644,6 +706,7 @@ export default [
               'https://firebasestorage.googleapis.com/v0/b/juntify-fd26d.appspot.com/o/BTS%2FI%20Need%20U.jpg?alt=media&token=e9b27c40-d67c-4aff-a4d5-299d5585acda',
           },
           {
+            artist: 'BTS',
             title: 'Run',
             album: '화양연화 pt.2',
             length: '0:14',
@@ -658,24 +721,27 @@ export default [
         artist: 'TaeYeon',
         list: [
           {
+            artist: 'TaeYeon',
             title: 'Stay',
             album: 'Stay',
-            length: '0:19',
+            length: '0:18',
             music:
               'https://firebasestorage.googleapis.com/v0/b/juntify-fd26d.appspot.com/o/TaeYeon%2FStay.mp3?alt=media&token=05c540ad-4717-491a-8881-1bb83e0b9ab4',
             photo:
               'https://firebasestorage.googleapis.com/v0/b/juntify-fd26d.appspot.com/o/TaeYeon%2FStay.jpg?alt=media&token=29357114-b932-4f08-b378-8bd072fb0ff6',
           },
           {
+            artist: 'TaeYeon',
             title: '11:11',
             album: '11:11',
-            length: '0:21',
+            length: '0:20',
             music:
               'https://firebasestorage.googleapis.com/v0/b/juntify-fd26d.appspot.com/o/TaeYeon%2F1111.mp3?alt=media&token=a75e5a06-af5a-48d3-8de3-25b1f92c9ed5',
             photo:
               'https://firebasestorage.googleapis.com/v0/b/juntify-fd26d.appspot.com/o/TaeYeon%2F1111.jpg?alt=media&token=04772f71-2bbe-4c8f-a506-6af1db424037',
           },
           {
+            artist: 'TaeYeon',
             title: 'Fine',
             album: 'My Voice - The 1st Album',
             length: '0:21',
@@ -685,6 +751,7 @@ export default [
               'https://firebasestorage.googleapis.com/v0/b/juntify-fd26d.appspot.com/o/TaeYeon%2FFine.jpg?alt=media&token=4ba0e637-eb58-42db-8cb6-66fcff3481f7',
           },
           {
+            artist: 'TaeYeon',
             title: 'I',
             album: 'I - The 1st Mini Album',
             length: '0:21',
@@ -694,9 +761,10 @@ export default [
               'https://firebasestorage.googleapis.com/v0/b/juntify-fd26d.appspot.com/o/TaeYeon%2FI.jpg?alt=media&token=07dacd47-e55c-44b6-88f9-66d552117acd',
           },
           {
+            artist: 'TaeYeon',
             title: 'Why',
             album: 'Why - The 2nd Mini Album',
-            length: '0:20',
+            length: '0:19',
             music:
               'https://firebasestorage.googleapis.com/v0/b/juntify-fd26d.appspot.com/o/TaeYeon%2FWhy.mp3?alt=media&token=aaff9b9a-3519-411e-b8c7-5783a29e70cd',
             photo:
@@ -708,6 +776,7 @@ export default [
         artist: 'Punch',
         list: [
           {
+            artist: 'Punch',
             title: 'Yesterday',
             album: 'Yesterday',
             length: '0:20',
@@ -717,6 +786,7 @@ export default [
               'https://firebasestorage.googleapis.com/v0/b/juntify-fd26d.appspot.com/o/Punch%2FYesterday.jpg?alt=media&token=d11f1691-6221-4076-8c10-81bd636d123d',
           },
           {
+            artist: 'Punch',
             title: 'Another Day',
             album: 'Hotel Del Luna OST Part.1',
             length: '0:20',
@@ -726,15 +796,17 @@ export default [
               'https://firebasestorage.googleapis.com/v0/b/juntify-fd26d.appspot.com/o/Punch%2FAnother%20Day.jpg?alt=media&token=48b8a185-a49d-4b22-be91-757c6a35c2de',
           },
           {
+            artist: 'Punch',
             title: 'Good bye',
             album: 'Good bye',
-            length: '0:21',
+            length: '0:20',
             music:
               'https://firebasestorage.googleapis.com/v0/b/juntify-fd26d.appspot.com/o/Punch%2FGood%20bye.mp3?alt=media&token=82e13cbd-e049-4af2-bc35-84f19f4a246a',
             photo:
               'https://firebasestorage.googleapis.com/v0/b/juntify-fd26d.appspot.com/o/Punch%2FGood%20bye.jpg?alt=media&token=5cbb4fc7-c5da-4073-abfd-e877a23615d4',
           },
           {
+            artist: 'Punch',
             title: 'Say Yes',
             album: 'Say Hello',
             length: '0:20',
@@ -744,9 +816,10 @@ export default [
               'https://firebasestorage.googleapis.com/v0/b/juntify-fd26d.appspot.com/o/Punch%2FSay%20Yes.jpg?alt=media&token=81f854f6-a04f-4113-8ccb-d94e527f57f7',
           },
           {
+            artist: 'Punch',
             title: 'Stay With Me',
             album: 'Guardian',
-            length: '0:22',
+            length: '0:21',
             music:
               'https://firebasestorage.googleapis.com/v0/b/juntify-fd26d.appspot.com/o/Punch%2FStay%20With%20Me.mp3?alt=media&token=7feddef8-5992-4bce-bbe1-89f42b2ae0f4',
             photo:

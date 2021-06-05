@@ -1,36 +1,34 @@
 <script>
-import { computed, onBeforeMount, ref } from 'vue';
 import { useStore } from 'vuex';
 import { useRouter } from 'vue-router';
+import { ref, computed, onBeforeMount } from 'vue';
 
 export default {
   setup() {
-    let loadedNum = ref(0);
-
     const store = useStore();
 
     const router = useRouter();
+
+    let loadedImgNum = ref(0);
 
     const data = computed(() => store.getters.data);
 
     const cardLength = computed(() => {
       let num = 0;
-      data.value.forEach((item) => {
-        num = num + item.artists.length;
-      });
+      data.value.forEach((theme) => (num = num + theme.artists.length));
       return num;
     });
 
-    const handleLoadNum = () => {
-      loadedNum.value++;
-      if (loadedNum.value === cardLength.value) store.commit('handleImageLoading');
+    const handleLoadedImgNum = () => {
+      loadedImgNum.value++;
+      if (loadedImgNum.value === cardLength.value) store.commit('handleImageLoading', false);
     };
-
-    onBeforeMount(() => store.commit('handleImageLoading'));
 
     const toArtistPage = (name) => router.push({ path: `/artist/${name}` });
 
-    return { data, handleLoadNum, toArtistPage };
+    onBeforeMount(() => store.commit('handleImageLoading', true));
+
+    return { data, handleLoadedImgNum, toArtistPage };
   },
 };
 </script>
@@ -47,7 +45,7 @@ export default {
             :key="artist.artist"
           >
             <div class="j-card" @click="toArtistPage(artist.artist)">
-              <img :src="artist.list[0].photo" @load="handleLoadNum" />
+              <img :src="artist.list[0].photo" @load="handleLoadedImgNum" />
               <span>{{ artist.artist }}</span>
             </div>
           </div>

@@ -1,14 +1,14 @@
 <script>
 import { useStore } from 'vuex';
 import { useRoute } from 'vue-router';
-import { computed, onBeforeMount, reactive, ref } from 'vue';
-
+import { ref, reactive, watch, computed, onBeforeMount } from 'vue';
 import { colorList } from '@/lib/tools.js';
 
 import Table from '@/components/Table.vue';
 
 export default {
   components: { Table },
+
   setup() {
     const store = useStore();
 
@@ -20,18 +20,25 @@ export default {
 
     const data = computed(() => store.getters.data);
 
-    onBeforeMount(() => {
+    const preWork = () => {
+      document.title = route.path === '/' ? 'Juntify' : `Juntify - ${route.params.name}`;
+      bannerColor.value = colorList[parseInt(Math.random() * 19)];
       data.value.forEach((theme) => {
         theme.artists.forEach((artist) => {
           if (artist.artist === route.params.name) playList.data = artist;
         });
       });
+      store.commit('psuhToCurrentPlayList', playList.data.list);
+    };
 
-      const randomNum = parseInt(Math.random() * 19);
-      bannerColor.value = colorList[randomNum];
-    });
+    watch(
+      () => route.path,
+      () => preWork()
+    );
 
-    return { bannerColor, playList };
+    onBeforeMount(() => preWork());
+
+    return { playList, bannerColor };
   },
 };
 </script>
