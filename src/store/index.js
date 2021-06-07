@@ -9,10 +9,11 @@ export default createStore({
     volume: 0.5,
     currentTime: 0,
     currentMusic: {},
-    currentPlayList: null,
+    currentPlaylist: null,
     musicLoading: false,
     imageLoading: false,
     intervalId: null,
+    localPlaylist: [],
   },
   mutations: {
     pause: (state) => state.audio.pause(),
@@ -27,7 +28,8 @@ export default createStore({
     setIntervalId: (state, payload) => (state.intervalId = payload),
     clearInterval: (state) => clearInterval(state.intervalId),
     specifyAudioTime: (state, payload) => (state.audio.currentTime = payload),
-    psuhToCurrentPlayList: (state, payload) => (state.currentPlayList = payload),
+    psuhToCurrentPlaylist: (state, payload) => (state.currentPlaylist = payload),
+    updateLocalPlaylist: (state, payload) => (state.localPlaylist = payload),
   },
   actions: {
     play(context, payload) {
@@ -73,5 +75,7 @@ export default createStore({
     currentMusic: (state) => state.currentMusic,
     musicLoading: (state) => state.musicLoading,
     imageLoading: (state) => state.imageLoading,
+    localPlaylist: (state) => state.localPlaylist,
+    currentPlaylist: (state) => state.currentPlaylist,
   },
 });

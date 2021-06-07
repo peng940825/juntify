@@ -16,9 +16,15 @@ export default {
 
     const currentMusic = computed(() => store.getters.currentMusic);
 
+    const currentPlaylist = computed(() => store.getters.currentPlaylist);
+
     const musicLoading = computed(() => store.getters.musicLoading);
 
     const haveCurrentMusic = computed(() => Object.keys(currentMusic.value).length > 0);
+
+    const dragTime = computed(() =>
+      store.state.audio ? Math.floor((progressBarTime.value / 100) * store.state.audio.duration) : 0
+    );
 
     const play = () => {
       if (store.state.audio) {
@@ -32,6 +38,10 @@ export default {
       store.commit('clearInterval');
       store.commit('handleIsPlaying', false);
     };
+
+    const mute = () => (volume.value = 0);
+
+    const secondFormat = (time) => (time < 10 ? `0:0${time}` : `0:${time}`);
 
     const progressBarMouseDown = () => {
       if (store.state.audio) {
@@ -51,48 +61,40 @@ export default {
     };
 
     const playPreOrNextMusic = (status) => {
-      if (store.state.audio) {
+      if (store.state.audio && currentPlaylist.value.length > 1) {
         store.commit('pause');
         store.commit('clearInterval');
         store.commit('handleIsPlaying', false);
         let targetIndex = null;
-        store.state.currentPlayList.forEach((item, index) => {
+        currentPlaylist.value.forEach((item, index) => {
           if (item.title === currentMusic.value.title) targetIndex = index;
         });
         if (status === 'next') {
-          if (targetIndex === store.state.currentPlayList.length - 1) targetIndex = 0;
+          if (targetIndex === currentPlaylist.value.length - 1) targetIndex = 0;
           else targetIndex++;
         } else if (status === 'pre') {
-          if (targetIndex === 0) targetIndex = store.state.currentPlayList.length - 1;
+          if (targetIndex === 0) targetIndex = currentPlaylist.value.length - 1;
           else targetIndex--;
         }
-        store.commit('setCurrentMusic', store.state.currentPlayList[targetIndex]);
-        store.dispatch('play', store.state.currentPlayList[targetIndex].music);
+        store.commit('setCurrentMusic', currentPlaylist.value[targetIndex]);
+        store.dispatch('play', currentPlaylist.value[targetIndex].music);
         store.commit('handleIsPlaying', true);
       }
     };
 
-    const dragTime = computed(() =>
-      store.state.audio ? Math.floor((progressBarTime.value / 100) * store.state.audio.duration) : 0
-    );
-
-    const mute = () => (volume.value = 0);
-
-    const secondFormat = (time) => (time < 10 ? `0:0${time}` : `0:${time}`);
-
     watch(
       () => store.state.currentTime,
-      (newValue) => {
-        currentTime.value = newValue;
-        progressBarTime.value = (newValue / Math.floor(store.state.audio.duration)) * 100;
+      (newVal) => {
+        currentTime.value = newVal;
+        progressBarTime.value = (newVal / Math.floor(store.state.audio.duration)) * 100;
       }
     );
 
     watch(
       () => volume.value,
-      (newValue) => {
-        store.commit('updateVolume', newValue / 100);
-        if (store.state.audio) store.commit('updateAudioVolume', newValue / 100);
+      (newVal) => {
+        store.commit('updateVolume', newVal / 100);
+        if (store.state.audio) store.commit('updateAudioVolume', newVal / 100);
       }
     );
 

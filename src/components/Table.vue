@@ -8,9 +8,13 @@ export default {
   components: { Deezer },
 
   props: {
-    playList: {
+    playlist: {
       type: Object,
       default: {},
+    },
+    status: {
+      type: String,
+      default: '',
     },
   },
 
@@ -18,6 +22,8 @@ export default {
     const store = useStore();
 
     let loadedNum = ref(0);
+
+    const localPlaylist = computed(() => store.getters.localPlaylist);
 
     const musicLoading = computed(() => store.getters.musicLoading);
 
@@ -49,7 +55,7 @@ export default {
 
     const handleLoadedImgNum = () => {
       loadedNum.value++;
-      if (loadedNum.value === props.playList.data.list.length)
+      if (loadedNum.value === props.playlist.data.list.length)
         store.commit('handleImageLoading', false);
     };
 
@@ -67,6 +73,43 @@ export default {
       }
     );
 
+    const openPanel = (item) => {
+      props.playlist.data.list.forEach((item) => {
+        if (item.panel) item.panel = false;
+      });
+      item.panel = true;
+    };
+
+    const closePanel = (item) => (item.panel = false);
+
+    const pushToLocalPlaylist = (playlist, music) => {
+      delete music.hover;
+      delete music.panel;
+      playlist.list.push(music);
+      store.commit('updateLocalPlaylist', localPlaylist.value);
+      localStorage.setItem('localPlaylist', JSON.stringify(localPlaylist.value));
+      closePanel(music);
+    };
+
+    const removeFromPlaylist = (item) => {
+      props.playlist.data.list.forEach((i, idx) => {
+        if (item.title === i.title) props.playlist.data.list.splice(idx, 1);
+      });
+      localPlaylist.value.forEach((item, index) => {
+        if (item.id === props.playlist.data.id) localPlaylist.value[index] = props.playlist.data;
+      });
+      store.commit('updateLocalPlaylist', localPlaylist.value);
+      localStorage.setItem('localPlaylist', JSON.stringify(localPlaylist.value));
+    };
+
+    const isExist = (playlist, music) => {
+      let res = true;
+      playlist.list.forEach((item) => {
+        if (item.title === music.title) res = false;
+      });
+      return res;
+    };
+
     onBeforeMount(() => store.commit('handleImageLoading', true));
 
     return {
@@ -78,6 +121,12 @@ export default {
       currentMusicTitle,
       musicLoading,
       handleLoadedImgNum,
+      openPanel,
+      closePanel,
+      localPlaylist,
+      pushToLocalPlaylist,
+      removeFromPlaylist,
+      isExist,
     };
   },
 };
@@ -91,9 +140,10 @@ export default {
       <span class="j-album">專輯</span>
       <i class="bi bi-clock j-time"></i>
     </div>
+
     <div
       class="j-table-row"
-      v-for="(item, index) in playList.data.list"
+      v-for="(item, index) in playlist.data.list"
       :key="item.title"
       @mouseover="overRow(item)"
       @mouseleave="leaveRow(item)"
@@ -116,11 +166,26 @@ export default {
         <img :src="item.photo" @load="handleLoadedImgNum" />
         <div class="j-content">
           <span :class="{ 'j-playing': currentMusicTitle === item.title }">{{ item.title }}</span>
-          <!-- <span>{{ playList.data.artist }}</span> -->
+          <span v-if="props.status === 'playlist'">{{ item.artist }}</span>
         </div>
       </div>
       <span class="j-album">{{ item.album }}</span>
-      <span class="j-time">{{ item.length }}</span>
+      <div class="j-time">
+        <div class="select-playlist" :class="{ 'd-block': item.panel }">
+          <span @click="closePanel(item)">取消</span>
+          <div class="divider"></div>
+          <div v-for="i in localPlaylist" :key="i.id" @click="pushToLocalPlaylist(i, item)">
+            <span v-if="isExist(i, item)">{{ i.title }}</span>
+          </div>
+        </div>
+        <i
+          class="bi bi-dash"
+          v-if="props.status === 'playlist'"
+          @click="removeFromPlaylist(item)"
+        ></i>
+        <i class="bi bi-plus" v-if="props.status === 'artist'" @click="openPanel(item)"></i>
+        <span>{{ item.length }}</span>
+      </div>
     </div>
   </div>
 </template>
@@ -128,7 +193,7 @@ export default {
 <style lang="scss" scoped>
 .j-table {
   color: #bdbdbd;
-  padding: 64px 32px 0 32px;
+  padding: 64px 32px 128px 32px;
 
   .j-table-header {
     @include d-flex;
@@ -205,6 +270,57 @@ export default {
   .j-time {
     margin-left: auto;
     margin-right: 64px;
+    position: relative;
+
+    .bi-plus,
+    .bi-dash {
+      font-size: 24px;
+      margin-bottom: 2px;
+      margin-right: 16px;
+    }
+
+    .select-playlist {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 160px;
+      background-color: #282828;
+      margin-top: 40px;
+      margin-right: 45px;
+      z-index: 999;
+      box-shadow: 0 16px 24px rgba(0, 0, 0, 30%), 0 6px 8px rgba(0, 0, 0, 20%);
+      display: none;
+      padding: 4px;
+      max-height: 320px;
+      overflow: auto;
+
+      &::-webkit-scrollbar {
+        width: 16px;
+      }
+
+      &::-webkit-scrollbar-track {
+        background-color: #282828;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background-color: #636363;
+      }
+
+      .divider {
+        border-bottom: 1px solid #424242;
+      }
+
+      span {
+        display: block;
+        font-size: 14px;
+        padding: 8px 12px;
+        cursor: pointer;
+
+        &:hover {
+          background-color: #3e3e3e;
+        }
+      }
+    }
   }
 }
 
@@ -221,5 +337,9 @@ export default {
 .bi {
   font-size: 18px;
   cursor: pointer;
+}
+
+.d-block {
+  display: block;
 }
 </style>

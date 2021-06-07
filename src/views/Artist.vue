@@ -16,41 +16,53 @@ export default {
 
     const bannerColor = ref('');
 
-    const playList = reactive({ data: {} });
+    const playlist = reactive({ data: {} });
 
     const data = computed(() => store.getters.data);
 
-    const preWork = () => {
-      document.title = route.path === '/' ? 'Juntify' : `Juntify - ${route.params.name}`;
-      bannerColor.value = colorList[parseInt(Math.random() * 19)];
-      data.value.forEach((theme) => {
-        theme.artists.forEach((artist) => {
-          if (artist.artist === route.params.name) playList.data = artist;
-        });
-      });
-      store.commit('psuhToCurrentPlayList', playList.data.list);
-    };
-
     watch(
       () => route.path,
-      () => preWork()
+      (newVal) => {
+        if (newVal.indexOf('artist') > 0) {
+          setBannerColor();
+          psuhToCurrentPlaylist();
+          setDocumentTitle();
+        }
+      }
     );
 
-    onBeforeMount(() => preWork());
+    onBeforeMount(() => {
+      setBannerColor();
+      psuhToCurrentPlaylist();
+      setDocumentTitle();
+    });
 
-    return { playList, bannerColor };
+    const setBannerColor = () => (bannerColor.value = colorList[parseInt(Math.random() * 19)]);
+
+    const psuhToCurrentPlaylist = () => {
+      data.value.forEach((theme) => {
+        theme.artists.forEach((artist) => {
+          if (artist.artist === route.params.name) playlist.data = artist;
+        });
+      });
+      store.commit('psuhToCurrentPlaylist', playlist.data.list);
+    };
+
+    const setDocumentTitle = () => (document.title = `Juntify - ${route.params.name}`);
+
+    return { playlist, bannerColor };
   },
 };
 </script>
 
 <template>
   <div class="j-artist">
-    <div class="j-banner" :style="{ backgroundColor: bannerColor }">
-      <img :src="playList.data.list[0].photo" />
-      <span>{{ playList.data.artist }}</span>
+    <div class="j-banner" :style="{ 'background-color': bannerColor }">
+      <img :src="playlist.data.list[0].photo" />
+      <span>{{ playlist.data.artist }}</span>
     </div>
-    <div class="j-gradient" :style="{ backgroundColor: bannerColor }">
-      <Table :playList="playList" />
+    <div class="j-gradient" :style="{ 'background-color': bannerColor }">
+      <Table :playlist="playlist" status="artist" />
     </div>
   </div>
 </template>
@@ -60,7 +72,6 @@ export default {
   width: calc(100% - 240px);
   min-height: 100vh;
   margin-left: 240px;
-  background-color: rgb(18, 18, 18);
 
   .j-banner {
     @include d-flex;
@@ -78,6 +89,8 @@ export default {
     img {
       width: 232px;
       height: 232px;
+      min-width: 232px;
+      min-height: 232px;
       background-color: white;
       border-radius: 50%;
       margin-right: 24px;
@@ -92,6 +105,10 @@ export default {
       align-self: flex-end;
       letter-spacing: -4px;
       color: white;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 920px;
+      white-space: nowrap;
     }
   }
 

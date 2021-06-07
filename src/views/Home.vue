@@ -1,7 +1,7 @@
 <script>
 import { useStore } from 'vuex';
 import { useRouter } from 'vue-router';
-import { ref, computed, onBeforeMount } from 'vue';
+import { ref, watch, computed, onBeforeMount, onMounted } from 'vue';
 
 export default {
   setup() {
@@ -9,7 +9,9 @@ export default {
 
     const router = useRouter();
 
-    let loadedImgNum = ref(0);
+    let loadedNum = ref(0);
+
+    const video = ref(null);
 
     const data = computed(() => store.getters.data);
 
@@ -19,22 +21,44 @@ export default {
       return num;
     });
 
-    const handleLoadedImgNum = () => {
-      loadedImgNum.value++;
-      if (loadedImgNum.value === cardLength.value) store.commit('handleImageLoading', false);
-    };
+    const handleloadedNum = () => loadedNum.value++;
 
     const toArtistPage = (name) => router.push({ path: `/artist/${name}` });
 
-    onBeforeMount(() => store.commit('handleImageLoading', true));
+    watch(
+      () => loadedNum.value,
+      (newVal) => {
+        if (newVal === cardLength.value + 1) store.commit('handleImageLoading', false);
+      }
+    );
 
-    return { data, handleLoadedImgNum, toArtistPage };
+    onBeforeMount(() => {
+      document.title = 'Juntify';
+      store.commit('handleImageLoading', true);
+    });
+
+    onMounted(() => {
+      video.value.addEventListener('canplay', () => loadedNum.value++);
+    });
+
+    return { data, video, handleloadedNum, toArtistPage };
   },
 };
 </script>
 
 <template>
   <div class="j-home">
+    <div class="video-container">
+      <span>2021</span>
+      <video
+        ref="video"
+        src="https://firebasestorage.googleapis.com/v0/b/juntify-fd26d.appspot.com/o/%E6%89%8B%E7%89%BD%E6%89%8B.mp4?alt=media&token=e4b93003-26ba-4d59-a3ea-e0ff56eee22a"
+        width="600"
+        controls
+      ></video>
+      <span>手牽手</span>
+    </div>
+
     <div class="row">
       <div class="col-xxl-6" v-for="theme in data" :key="theme.theme">
         <div class="j-theme">{{ theme.theme }}</div>
@@ -45,7 +69,7 @@ export default {
             :key="artist.artist"
           >
             <div class="j-card" @click="toArtistPage(artist.artist)">
-              <img :src="artist.list[0].photo" @load="handleLoadedImgNum" />
+              <img :src="artist.list[0].photo" @load="handleloadedNum" />
               <span>{{ artist.artist }}</span>
             </div>
           </div>
@@ -63,6 +87,23 @@ export default {
   margin-left: 240px;
   padding: 32px;
   color: white;
+  margin-bottom: 64px;
+
+  .video-container {
+    @include d-flex-a-center-j-center;
+    margin-bottom: 48px;
+
+    video {
+      margin: 0 64px;
+    }
+
+    span {
+      color: darken(#212121, 10%);
+      font-size: 72px;
+      letter-spacing: 8px;
+      text-shadow: -1px -1px 1px #bdbdbd, 2px 2px 1px #424242;
+    }
+  }
 
   .j-theme {
     font-size: 24px;
