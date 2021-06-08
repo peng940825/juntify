@@ -1,6 +1,7 @@
 <script>
-import { computed } from 'vue';
 import { useStore } from 'vuex';
+import { useRoute } from 'vue-router';
+import { ref, watch, computed } from 'vue';
 
 import Menu from '@/views/Menu.vue';
 import Footer from '@/views/Footer.vue';
@@ -12,18 +13,27 @@ export default {
   setup() {
     const store = useStore();
 
+    const route = useRoute();
+
+    const is404 = ref(false);
+
     const imageLoading = computed(() => store.getters.imageLoading);
 
-    return { imageLoading };
+    watch(
+      () => route.path,
+      (newVal) => (is404.value = newVal === '/404' ? true : false)
+    );
+
+    return { is404, imageLoading };
   },
 };
 </script>
 
 <template>
   <Loader v-show="imageLoading" />
-  <Menu />
+  <Menu v-if="!is404" />
   <router-view />
-  <Footer />
+  <Footer v-if="!is404" />
 </template>
 
 <style>

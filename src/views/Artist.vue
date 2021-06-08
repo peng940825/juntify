@@ -1,6 +1,6 @@
 <script>
 import { useStore } from 'vuex';
-import { useRoute } from 'vue-router';
+import { useRoute, useRouter } from 'vue-router';
 import { ref, reactive, watch, computed, onBeforeMount } from 'vue';
 import { colorList } from '@/lib/tools.js';
 
@@ -14,6 +14,8 @@ export default {
 
     const route = useRoute();
 
+    const router = useRouter();
+
     const bannerColor = ref('');
 
     const playlist = reactive({ data: {} });
@@ -24,18 +26,36 @@ export default {
       () => route.path,
       (newVal) => {
         if (newVal.indexOf('artist') > 0) {
-          setBannerColor();
-          psuhToCurrentPlaylist();
-          setDocumentTitle();
+          if (checkDirect()) {
+            setBannerColor();
+            psuhToCurrentPlaylist();
+            setDocumentTitle();
+          } else {
+            router.push({ path: '/404' });
+          }
         }
       }
     );
 
     onBeforeMount(() => {
-      setBannerColor();
-      psuhToCurrentPlaylist();
-      setDocumentTitle();
+      if (checkDirect()) {
+        setBannerColor();
+        psuhToCurrentPlaylist();
+        setDocumentTitle();
+      } else {
+        router.push({ path: '/404' });
+      }
     });
+
+    const checkDirect = () => {
+      let isSuccess = false;
+      data.value.forEach((theme) => {
+        theme.artists.forEach((artist) => {
+          if (artist.artist === route.params.name) isSuccess = true;
+        });
+      });
+      return isSuccess;
+    };
 
     const setBannerColor = () => (bannerColor.value = colorList[parseInt(Math.random() * 19)]);
 

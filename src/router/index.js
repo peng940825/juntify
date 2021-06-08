@@ -16,6 +16,15 @@ const routes = [
     name: 'Playlist',
     component: () => import('@/views/Playlist.vue'),
   },
+  {
+    path: '/404',
+    name: 'NotFoundPage',
+    component: () => import('@/views/NotFoundPage.vue'),
+  },
+  {
+    path: '/:pathMatch(.*)',
+    redirect: '/404',
+  },
 ];
 
 const router = createRouter({

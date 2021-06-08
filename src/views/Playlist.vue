@@ -1,6 +1,6 @@
 <script>
 import { useStore } from 'vuex';
-import { useRoute } from 'vue-router';
+import { useRoute, useRouter } from 'vue-router';
 import { ref, reactive, watch, computed, onBeforeMount } from 'vue';
 import { colorList } from '@/lib/tools.js';
 
@@ -13,6 +13,8 @@ export default {
     const store = useStore();
 
     const route = useRoute();
+
+    const router = useRouter();
 
     const bannerColor = ref('');
 
@@ -48,19 +50,35 @@ export default {
       () => route.path,
       (newVal) => {
         if (newVal.indexOf('playlist') > 0) {
-          setBannerColor();
-          psuhToCurrentPlaylist();
-          setDocumentTitle();
-          if (editPanelIsOpen) handleEditPanel(false);
+          if (checkDirect()) {
+            setBannerColor();
+            psuhToCurrentPlaylist();
+            setDocumentTitle();
+            if (editPanelIsOpen) handleEditPanel(false);
+          } else {
+            router.push({ path: '/404' });
+          }
         }
       }
     );
 
     onBeforeMount(() => {
-      setBannerColor();
-      psuhToCurrentPlaylist();
-      setDocumentTitle();
+      if (checkDirect()) {
+        setBannerColor();
+        psuhToCurrentPlaylist();
+        setDocumentTitle();
+      } else {
+        router.push({ path: '/404' });
+      }
     });
+
+    const checkDirect = () => {
+      let isSuccess = false;
+      localPlaylist.value.forEach((item) => {
+        if (route.params.id === String(item.id)) isSuccess = true;
+      });
+      return isSuccess;
+    };
 
     const setBannerColor = () => (bannerColor.value = colorList[parseInt(Math.random() * 19)]);
 
