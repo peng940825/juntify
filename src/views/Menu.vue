@@ -142,6 +142,7 @@ export default {
   background-color: rgb(0, 0, 0);
   color: #bdbdbd;
   font-size: 14px;
+  z-index: 999;
 
   .logo {
     @include d-flex-a-center;

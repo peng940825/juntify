@@ -1,7 +1,52 @@
 export default [
   {
-    theme: '華語大勢',
+    theme: 'Taiwan',
     artists: [
+      {
+        artist: '李榮浩',
+        list: [
+          {
+            artist: '李榮浩',
+            title: '就這樣',
+            album: '嗯',
+            length: '0:23',
+            music:
+              'https://firebasestorage.googleapis.com/v0/b/juntify-fd26d.appspot.com/o/%E6%9D%8E%E6%A6%AE%E6%B5%A9%2F%E5%B0%B1%E9%80%99%E6%A8%A3.mp3?alt=media&token=207eb401-8b11-4fa6-bb39-cda2b0295d82',
+            photo:
+              'https://firebasestorage.googleapis.com/v0/b/juntify-fd26d.appspot.com/o/%E6%9D%8E%E6%A6%AE%E6%B5%A9%2F%E5%B0%B1%E9%80%99%E6%A8%A3.jpg?alt=media&token=dc8cdc57-677a-452b-aefa-7d914154ef0b',
+          },
+          {
+            artist: '李榮浩',
+            title: '不將就',
+            album: '有理想',
+            length: '0:26',
+            music:
+              'https://firebasestorage.googleapis.com/v0/b/juntify-fd26d.appspot.com/o/%E6%9D%8E%E6%A6%AE%E6%B5%A9%2F%E4%B8%8D%E5%B0%87%E5%B0%B1.mp3?alt=media&token=84f251e3-e04b-48ec-be24-9efcfe693b66',
+            photo:
+              'https://firebasestorage.googleapis.com/v0/b/juntify-fd26d.appspot.com/o/%E6%9D%8E%E6%A6%AE%E6%B5%A9%2F%E4%B8%8D%E5%B0%87%E5%B0%B1.jpg?alt=media&token=853a7800-2b2d-403c-8f79-ff4896451984',
+          },
+          {
+            artist: '李榮浩',
+            title: '年少有為',
+            album: '耳朵',
+            length: '0:14',
+            music:
+              'https://firebasestorage.googleapis.com/v0/b/juntify-fd26d.appspot.com/o/%E6%9D%8E%E6%A6%AE%E6%B5%A9%2F%E5%B9%B4%E5%B0%91%E6%9C%89%E7%82%BA.mp3?alt=media&token=cf13ed7f-91ee-421d-916c-fca4adfbc84d',
+            photo:
+              'https://firebasestorage.googleapis.com/v0/b/juntify-fd26d.appspot.com/o/%E6%9D%8E%E6%A6%AE%E6%B5%A9%2F%E5%B9%B4%E5%B0%91%E6%9C%89%E7%82%BA.jpg?alt=media&token=ba2b7ba8-8040-47f5-8c49-398f4526664c',
+          },
+          {
+            artist: '李榮浩',
+            title: '模特',
+            album: '模特',
+            length: '0:22',
+            music:
+              'https://firebasestorage.googleapis.com/v0/b/juntify-fd26d.appspot.com/o/%E6%9D%8E%E6%A6%AE%E6%B5%A9%2F%E6%A8%A1%E7%89%B9.mp3?alt=media&token=8c9a8392-f4f7-4ddb-8aed-711aa4f5df0d',
+            photo:
+              'https://firebasestorage.googleapis.com/v0/b/juntify-fd26d.appspot.com/o/%E6%9D%8E%E6%A6%AE%E6%B5%A9%2F%E6%A8%A1%E7%89%B9.jpg?alt=media&token=60e56d47-ad04-4391-a919-67d6ccffe7bb',
+          },
+        ],
+      },
       {
         artist: '任然',
         list: [
@@ -157,55 +202,10 @@ export default [
           },
         ],
       },
-      {
-        artist: '李榮浩',
-        list: [
-          {
-            artist: '李榮浩',
-            title: '就這樣',
-            album: '嗯',
-            length: '0:23',
-            music:
-              'https://firebasestorage.googleapis.com/v0/b/juntify-fd26d.appspot.com/o/%E6%9D%8E%E6%A6%AE%E6%B5%A9%2F%E5%B0%B1%E9%80%99%E6%A8%A3.mp3?alt=media&token=207eb401-8b11-4fa6-bb39-cda2b0295d82',
-            photo:
-              'https://firebasestorage.googleapis.com/v0/b/juntify-fd26d.appspot.com/o/%E6%9D%8E%E6%A6%AE%E6%B5%A9%2F%E5%B0%B1%E9%80%99%E6%A8%A3.jpg?alt=media&token=dc8cdc57-677a-452b-aefa-7d914154ef0b',
-          },
-          {
-            artist: '李榮浩',
-            title: '不將就',
-            album: '有理想',
-            length: '0:26',
-            music:
-              'https://firebasestorage.googleapis.com/v0/b/juntify-fd26d.appspot.com/o/%E6%9D%8E%E6%A6%AE%E6%B5%A9%2F%E4%B8%8D%E5%B0%87%E5%B0%B1.mp3?alt=media&token=84f251e3-e04b-48ec-be24-9efcfe693b66',
-            photo:
-              'https://firebasestorage.googleapis.com/v0/b/juntify-fd26d.appspot.com/o/%E6%9D%8E%E6%A6%AE%E6%B5%A9%2F%E4%B8%8D%E5%B0%87%E5%B0%B1.jpg?alt=media&token=853a7800-2b2d-403c-8f79-ff4896451984',
-          },
-          {
-            artist: '李榮浩',
-            title: '年少有為',
-            album: '耳朵',
-            length: '0:14',
-            music:
-              'https://firebasestorage.googleapis.com/v0/b/juntify-fd26d.appspot.com/o/%E6%9D%8E%E6%A6%AE%E6%B5%A9%2F%E5%B9%B4%E5%B0%91%E6%9C%89%E7%82%BA.mp3?alt=media&token=cf13ed7f-91ee-421d-916c-fca4adfbc84d',
-            photo:
-              'https://firebasestorage.googleapis.com/v0/b/juntify-fd26d.appspot.com/o/%E6%9D%8E%E6%A6%AE%E6%B5%A9%2F%E5%B9%B4%E5%B0%91%E6%9C%89%E7%82%BA.jpg?alt=media&token=ba2b7ba8-8040-47f5-8c49-398f4526664c',
-          },
-          {
-            artist: '李榮浩',
-            title: '模特',
-            album: '模特',
-            length: '0:22',
-            music:
-              'https://firebasestorage.googleapis.com/v0/b/juntify-fd26d.appspot.com/o/%E6%9D%8E%E6%A6%AE%E6%B5%A9%2F%E6%A8%A1%E7%89%B9.mp3?alt=media&token=8c9a8392-f4f7-4ddb-8aed-711aa4f5df0d',
-            photo:
-              'https://firebasestorage.googleapis.com/v0/b/juntify-fd26d.appspot.com/o/%E6%9D%8E%E6%A6%AE%E6%B5%A9%2F%E6%A8%A1%E7%89%B9.jpg?alt=media&token=60e56d47-ad04-4391-a919-67d6ccffe7bb',
-          },
-        ],
-      },
     ],
   },
   {
-    theme: '日語強打',
+    theme: 'Japan',
     artists: [
       {
         artist: 'まるりとりゅうが',
@@ -420,7 +420,7 @@ export default [
     ],
   },
   {
-    theme: '歐美狂襲',
+    theme: 'America',
     artists: [
       {
         artist: 'Against The Current',
@@ -615,7 +615,7 @@ export default [
     ],
   },
   {
-    theme: '韓風流行',
+    theme: 'Korea',
     artists: [
       {
         artist: 'IU',

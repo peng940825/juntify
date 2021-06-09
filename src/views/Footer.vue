@@ -188,6 +188,7 @@ export default {
   height: 90px;
   background-color: rgb(24, 24, 24);
   border-top: 1px solid rgb(40, 40, 40);
+  z-index: 999;
 
   .left {
     @include d-flex-a-center;

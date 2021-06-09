@@ -3,7 +3,11 @@ import { useStore } from 'vuex';
 import { useRouter } from 'vue-router';
 import { ref, watch, computed, onBeforeMount, onMounted } from 'vue';
 
+import ImageMosaic from '@/components/ImageMosaic.vue';
+
 export default {
+  components: { ImageMosaic },
+
   setup() {
     const store = useStore();
 
@@ -49,18 +53,15 @@ export default {
 <template>
   <div class="j-home">
     <div class="video-container">
-      <span>2021</span>
       <video
         ref="video"
         src="https://firebasestorage.googleapis.com/v0/b/juntify-fd26d.appspot.com/o/%E6%89%8B%E7%89%BD%E6%89%8B.mp4?alt=media&token=e4b93003-26ba-4d59-a3ea-e0ff56eee22a"
-        width="600"
         controls
       ></video>
-      <span>手牽手</span>
     </div>
 
     <div class="row">
-      <div class="col-xxl-6" v-for="theme in data" :key="theme.theme">
+      <div class="theme-container col-xxl-6" v-for="theme in data" :key="theme.theme">
         <div class="j-theme">{{ theme.theme }}</div>
         <div class="row">
           <div
@@ -76,6 +77,8 @@ export default {
         </div>
       </div>
     </div>
+
+    <ImageMosaic />
   </div>
 </template>
 
@@ -94,37 +97,41 @@ export default {
     margin-bottom: 48px;
 
     video {
+      min-width: 240px;
+      max-width: 900px;
       margin: 0 64px;
     }
-
-    span {
-      color: darken(#212121, 10%);
-      font-size: 72px;
-      letter-spacing: 8px;
-      text-shadow: -1px -1px 1px #bdbdbd, 2px 2px 1px #424242;
-    }
   }
 
-  .j-theme {
-    font-size: 24px;
-    margin-bottom: 16px;
-  }
+  .theme-container {
+    position: relative;
+    margin: 32px 0;
 
-  .j-card {
-    padding: 16px 16px 32px 16px;
-    margin-bottom: 24px;
-    border-radius: 4px;
-    background-color: rgb(24, 24, 24);
-    transition: 0.25s;
-
-    &:hover {
-      cursor: pointer;
-      background-color: rgb(38, 38, 38);
+    .j-theme {
+      position: absolute;
+      top: -24px;
+      left: -16px;
+      font-size: 30px;
+      font-family: 'Permanent Marker', cursive;
+      transform: rotate(-25deg);
     }
 
-    img {
-      width: 100%;
-      margin-bottom: 16px;
+    .j-card {
+      margin-bottom: 24px;
+      padding: 16px 16px 32px 16px;
+      background-color: rgb(24, 24, 24);
+      border-radius: 4px;
+      transition: 0.25s;
+
+      &:hover {
+        cursor: pointer;
+        background-color: #424242;
+      }
+
+      img {
+        width: 100%;
+        margin-bottom: 16px;
+      }
     }
   }
 }
