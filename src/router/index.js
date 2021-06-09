@@ -1,29 +1,38 @@
 import { createRouter, createWebHashHistory } from 'vue-router';
 
+import NotFoundPage from '@/views/NotFoundPage.vue';
+
 const routes = [
   {
     path: '/',
-    name: 'Home',
-    component: () => import('@/views/Home.vue'),
-  },
-  {
-    path: '/artist/:name',
-    name: 'Artist',
-    component: () => import('@/views/Artist.vue'),
-  },
-  {
-    path: '/playlist/:id',
-    name: 'Playlist',
-    component: () => import('@/views/Playlist.vue'),
+    name: 'System',
+    component: () => import('@/views/System.vue'),
+    children: [
+      {
+        path: '',
+        name: 'Home',
+        component: () => import('@/views/Home.vue'),
+      },
+      {
+        path: 'artist/:name',
+        name: 'Artist',
+        component: () => import('@/views/Artist.vue'),
+      },
+      {
+        path: 'playlist/:id',
+        name: 'Playlist',
+        component: () => import('@/views/Playlist.vue'),
+      },
+    ],
   },
   {
     path: '/404',
     name: 'NotFoundPage',
-    component: () => import('@/views/NotFoundPage.vue'),
+    component: NotFoundPage,
   },
   {
     path: '/:pathMatch(.*)',
-    redirect: '/404',
+    component: NotFoundPage,
   },
 ];
 
