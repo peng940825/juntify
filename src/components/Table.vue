@@ -110,7 +110,17 @@ export default {
       return res;
     };
 
-    onBeforeMount(() => store.commit('handleImageLoading', true));
+    const sameMusic = () => {
+      props.playlist.data.list.forEach((item, index) => {
+        if (item.title === currentMusic.value.title)
+          props.playlist.data.list[index] = currentMusic.value;
+      });
+    };
+
+    onBeforeMount(() => {
+      sameMusic();
+      store.commit('handleImageLoading', true);
+    });
 
     return {
       props,
@@ -166,7 +176,9 @@ export default {
         <img :src="item.photo" @load="handleLoadedImgNum" />
         <div class="j-content">
           <span :class="{ 'j-playing': currentMusicTitle === item.title }">{{ item.title }}</span>
-          <span v-if="props.status === 'playlist'">{{ item.artist }}</span>
+          <router-link v-if="props.status === 'playlist'" :to="`/artist/${item.artist}`">
+            {{ item.artist }}
+          </router-link>
         </div>
       </div>
       <span class="j-album">{{ item.album }}</span>
@@ -249,6 +261,15 @@ export default {
         @include d-flex-j-center;
         @include f-column;
         margin-left: 16px;
+
+        a {
+          color: #bdbdbd;
+          text-decoration: none;
+
+          &:hover {
+            text-decoration: underline;
+          }
+        }
       }
     }
   }

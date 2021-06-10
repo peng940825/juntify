@@ -26,6 +26,11 @@ const routes = [
     ],
   },
   {
+    path: '/subscribe',
+    name: 'Subscribe',
+    component: () => import('@/views/Subscribe.vue'),
+  },
+  {
     path: '/404',
     name: 'NotFoundPage',
     component: NotFoundPage,

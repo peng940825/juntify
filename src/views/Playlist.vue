@@ -86,7 +86,7 @@ export default {
       playlist.data = localPlaylist.value.filter(
         (item) => item.id === parseInt(route.params.id)
       )[0];
-      store.commit('psuhToCurrentPlaylist', JSON.parse(JSON.stringify(playlist.data.list)));
+      store.commit('psuhToCurrentPlaylist', playlist.data.list);
     };
 
     const setDocumentTitle = () => (document.title = `Juntify - ${playlist.data.title}`);

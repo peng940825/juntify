@@ -63,6 +63,8 @@ export default {
 
     const toHomePage = () => router.push({ path: '/' });
 
+    const toSubscribePage = () => router.push({ path: '/subscribe' });
+
     const toPlaylistPage = (id) => router.push({ path: `/playlist/${id}` });
 
     return {
@@ -77,6 +79,7 @@ export default {
       overRow,
       leaveRow,
       removePlaylist,
+      toSubscribePage,
     };
   },
 };
@@ -87,6 +90,10 @@ export default {
     <div class="logo">
       <img src="@/assets/logo.png" />
       <router-link to="/">Juntify</router-link>
+    </div>
+
+    <div class="subscribe subscribe-border" @click="toSubscribePage">
+      <span>訂閱我</span>
     </div>
 
     <div class="home" :class="{ 'home-active': path === '/' }" @click="toHomePage">
@@ -129,6 +136,11 @@ export default {
         >
         </i>
       </div>
+    </div>
+
+    <div class="copyright">
+      <span>圖片版權屬於 Spotify 所有</span>
+      <span>Copyright © 2021 Juntify</span>
     </div>
   </div>
 </template>
@@ -190,7 +202,7 @@ export default {
     @include d-flex;
     @include f-column;
     margin-left: 24px;
-    max-height: 720px;
+    max-height: 640px;
     overflow: auto;
 
     &::-webkit-scrollbar {
@@ -225,6 +237,70 @@ export default {
       }
     }
   }
+
+  .subscribe {
+    width: 130px;
+    padding: 6px 0;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    color: #bdbdbd;
+    text-align: center;
+    margin: 0 0 16px 24px;
+    font-weight: bold;
+  }
+
+  .subscribe-border {
+    --borderWidth: 3px;
+    position: relative;
+    background: #212121;
+    border-radius: var(--borderWidth);
+
+    &::after {
+      z-index: -9;
+      content: '';
+      position: absolute;
+      top: calc(-1 * var(--borderWidth));
+      left: calc(-1 * var(--borderWidth));
+      height: calc(100% + var(--borderWidth) * 2);
+      width: calc(100% + var(--borderWidth) * 2);
+      border-radius: calc(2 * var(--borderWidth));
+      background: linear-gradient(
+        75deg,
+        #f79533,
+        #f37055,
+        #ef4e7b,
+        #a166ab,
+        #5073b8,
+        #1098ad,
+        #07b39b,
+        #6fba82
+      );
+      background-size: 300% 300%;
+      animation: animatedgradient 3s ease alternate infinite;
+    }
+  }
+
+  .copyright {
+    @include d-flex;
+    flex-direction: column;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+    color: white;
+    width: 100%;
+    font-size: 12px;
+    margin-bottom: 16px;
+
+    span:first-child {
+      margin: 0 auto 8px auto;
+    }
+
+    span:last-child {
+      margin: 0 auto;
+    }
+  }
 }
 
 .home-active {
@@ -240,5 +316,23 @@ export default {
 .create-playlist-active {
   color: white;
   border-radius: 4px;
+}
+
+@keyframes animatedgradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  25% {
+    background-position: 25% 0%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  75% {
+    background-position: 75% 0%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 </style>
