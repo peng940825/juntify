@@ -29,6 +29,10 @@ export default {
 
     const toArtistPage = (name) => router.push({ path: `/artist/${name}` });
 
+    const prePage = () => router.go(-1);
+
+    const nextPage = () => router.go(1);
+
     watch(
       () => loadedNum.value,
       (newVal) => {
@@ -45,13 +49,18 @@ export default {
       video.value.addEventListener('canplay', () => loadedNum.value++);
     });
 
-    return { data, video, handleloadedNum, toArtistPage };
+    return { data, video, handleloadedNum, toArtistPage, prePage, nextPage };
   },
 };
 </script>
 
 <template>
   <div class="j-home">
+    <div class="page-control">
+      <div class="pre" @click="prePage"><i class="bi bi-chevron-left"></i></div>
+      <div class="next" @click="nextPage"><i class="bi bi-chevron-right"></i></div>
+    </div>
+
     <div class="video-container">
       <video
         ref="video"
@@ -91,6 +100,28 @@ export default {
   padding: 32px;
   color: white;
   margin-bottom: 64px;
+
+  .page-control {
+    @include d-flex;
+    position: absolute;
+    top: 16px;
+    left: 270px;
+
+    .pre {
+      margin-right: 16px;
+    }
+
+    .pre,
+    .next {
+      @include d-flex-a-center-j-center;
+      width: 32px;
+      height: 32px;
+      cursor: pointer;
+      border-radius: 50%;
+      color: white;
+      background-color: rgba(#000, 0.6);
+    }
+  }
 
   .video-container {
     @include d-flex-a-center-j-center;

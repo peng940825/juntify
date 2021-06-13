@@ -46,6 +46,10 @@ export default {
       handleEditPanel(false);
     };
 
+    const prePage = () => router.go(-1);
+
+    const nextPage = () => router.go(1);
+
     watch(
       () => route.path,
       (newVal) => {
@@ -99,6 +103,8 @@ export default {
       handleEditPanel,
       editPlaylistTitle,
       playlistTitleReg,
+      prePage,
+      nextPage,
     };
   },
 };
@@ -107,6 +113,10 @@ export default {
 <template>
   <div class="playlist">
     <div class="banner" :style="{ 'background-color': bannerColor }">
+      <div class="page-control">
+        <div class="pre" @click="prePage"><i class="bi bi-chevron-left"></i></div>
+        <div class="next" @click="nextPage"><i class="bi bi-chevron-right"></i></div>
+      </div>
       <img v-if="playlist.data.list.length > 0" :src="playlist.data.list[0].photo" />
       <div v-else class="empty">
         <i class="bi bi-music-note-beamed"></i>
@@ -158,6 +168,28 @@ export default {
       from(transparent),
       to(rgba(0, 0, 0, 0.5))
     );
+
+    .page-control {
+      @include d-flex;
+      position: absolute;
+      top: 16px;
+      left: 270px;
+
+      .pre {
+        margin-right: 16px;
+      }
+
+      .pre,
+      .next {
+        @include d-flex-a-center-j-center;
+        width: 32px;
+        height: 32px;
+        cursor: pointer;
+        border-radius: 50%;
+        color: white;
+        background-color: rgba(#000, 0.6);
+      }
+    }
 
     img,
     .empty {

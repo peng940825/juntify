@@ -22,6 +22,10 @@ export default {
 
     const data = computed(() => store.getters.data);
 
+    const prePage = () => router.go(-1);
+
+    const nextPage = () => router.go(1);
+
     watch(
       () => route.path,
       (newVal) => {
@@ -70,7 +74,7 @@ export default {
 
     const setDocumentTitle = () => (document.title = `Juntify - ${route.params.name}`);
 
-    return { playlist, bannerColor };
+    return { playlist, bannerColor, prePage, nextPage };
   },
 };
 </script>
@@ -78,6 +82,10 @@ export default {
 <template>
   <div class="j-artist">
     <div class="j-banner" :style="{ 'background-color': bannerColor }">
+      <div class="page-control">
+        <div class="pre" @click="prePage"><i class="bi bi-chevron-left"></i></div>
+        <div class="next" @click="nextPage"><i class="bi bi-chevron-right"></i></div>
+      </div>
       <img :src="playlist.data.list[0].photo" />
       <span>{{ playlist.data.artist }}</span>
     </div>
@@ -105,6 +113,28 @@ export default {
       from(transparent),
       to(rgba(0, 0, 0, 0.5))
     );
+
+    .page-control {
+      @include d-flex;
+      position: absolute;
+      top: 16px;
+      left: 270px;
+
+      .pre {
+        margin-right: 16px;
+      }
+
+      .pre,
+      .next {
+        @include d-flex-a-center-j-center;
+        width: 32px;
+        height: 32px;
+        cursor: pointer;
+        border-radius: 50%;
+        color: white;
+        background-color: rgba(#000, 0.6);
+      }
+    }
 
     img {
       width: 232px;
